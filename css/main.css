@@ -1,0 +1,29 @@
+#index-layout {
+  width: 1024px;
+  min-height: 500px;
+  border: 1px #757575 dashed;
+  margin: 0 auto;
+}
+
+
+/** ----------------------- 布局控制面板 Start-------------------------- **/
+
+#control {
+  position: absolute;
+  width: 680px;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -340px;
+}
+
+#control .panel-heading {
+  cursor: move;
+}
+
+#control .panel-heading span.glyphicon {
+  float: right;
+  cursor: pointer;
+}
+
+
+/** ----------------------- 布局控制面板 End-------------------------- **/

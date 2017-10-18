@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页面可视化布局Demo</title>
+  <script src="js/lib/require.js" defer async="true" data-main="js/main"></script>
+</head>
+
+<body>
+  <div id="index-layout">
+    <div class="container-fluid">
+      <div class="lyrow ui-draggable"><a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>删除</a> <span class="drag label"><i class="icon-move"></i>拖动</span>
+        <div class="preview">
+          <input value="12" type="text">
+        </div>
+        <div class="view">
+          <div class="row-fluid clearfix">
+            <div class="span12 column"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="control" class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><span class="glyphicon glyphicon-minus" aria-hidden="true" data-expand=true></span>布局控制器</h3>
+    </div>
+    <div class="panel-body">
+      Panel content
+    </div>
+    <div class="panel-footer">提示：先根据需要设置容器，然后拖动需要的组件到容器中</div>
+  </div>
+</body>
+
+</html>
