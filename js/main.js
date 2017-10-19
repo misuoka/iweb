@@ -3,7 +3,7 @@
  * @type {Object}
  */
 require.config({
-  baseUrl: 'js/moudles',
+  baseUrl: 'js/modules',
   map: {
     '*': {
       'css': '../lib/css.min'
@@ -12,7 +12,8 @@ require.config({
   paths: {　　　　　　
     "jquery": "../lib/jquery-1.12.0.min",
     "jqueryUI": "../lib/jquery-ui/jquery-ui.min",
-    "bootstrap": "../lib/bootstrap-3.3.7-dist/js/bootstrap.min"
+    "bootstrap": "../lib/bootstrap-3.3.7-dist/js/bootstrap.min",
+    "layer": '../lib/layer/layer'
   },
   shim: {
     jqueryUI: {
@@ -26,6 +27,9 @@ require.config({
         'jquery',
         'css!../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css'
       ]
+    },
+    layer: {
+      deps: ['jquery', 'css!../lib/layer/theme/default/layer.css']
     },
     layout: {
       deps: [
@@ -41,11 +45,10 @@ require.config({
 
 require([
   'jquery',
-  'jqueryUI',
   'layout',
   'control',
   'bootstrap'
-], function($, $ui, layout, control) {
+], function($, layout, control) {
 
   $(function() {
     // 初始化
