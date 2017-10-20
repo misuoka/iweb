@@ -4,43 +4,35 @@
 define(['jquery', 'jqueryUI'], function($) {　　　　
   var Layout = function() {}; // 布局区域
 
-  // 布局区域 接收拖动初始化
-  // Layout.prototype.droppable = function() {
-  //   $(".layout-container").droppable({
-  //     accept: ".selector",
-  //     drop: function(event, ui) {
-  //       // console.info(ui.draggable.html())
-  //       // $(this).find("p").remove();
-
-  //       $(ui.draggable.html()).find('.view').appendTo(this);
-  //     }
-  //   });
-  // }
-
+  // 主容器初始化
   Layout.prototype.sortable = function() {
-    $(".layout-container, .layout-container .column").sortable({
+    $(".layout-container").sortable({
       connectWith: ".column",
       opacity: .35,
       handle: ".drag",
       start: function(e, t) {
-        console.log(t)
-        // if (!startdrag) stopsave++;
-        // startdrag = 1;
+
       },
       stop: function(e, t) {
-        // console.log(e, t)
-        // if (stopsave > 0) stopsave--;
-        // startdrag = 0;
+        $('.layout-container .ui-draggable').removeAttr('style');
+        $('.layout-container .ui-draggable .preview').remove();
       }
     });
+  }
+
+  Layout.prototype.removeElement = function() {
+    $(".layout-container").delegate(".remove", "click", function(e) {
+      e.preventDefault();
+      $(this).parent().parent().remove();
+    })
   }
 
   return {　　　　　　
     init: function() {
       var layout = new Layout();
 
-      // layout.droppable();
       layout.sortable();
+      layout.removeElement();
     }
   };　　
 });

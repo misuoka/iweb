@@ -1,6 +1,7 @@
 /**
  * 控制面板模块
  */
+var requireone = require;
 define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
   var Control = function() {};
 
@@ -37,6 +38,7 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
 
   // 控制面板 拖动初始化
   Control.prototype.draggable = function() {
+    var me = this;
     $('#control').draggable();
 
     $("#control .lyrow").draggable({
@@ -44,37 +46,41 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
       helper: "clone",
       handle: ".drag",
       start: function(e, t) {
-        // if (!startdrag) stopsave++;
-        // startdrag = 1;
+
       },
       drop: function(event, ui) {
-        console.info(ui.draggable.html())
-        // $(this).find("p").remove();
 
-        $(ui.draggable.html()).find('.view').appendTo(this);
       },
       drag: function(e, t) {
         t.helper.width(400)
       },
       stop: function(e, t) {
-        // console.info(t.helper.find('.view').html());
-        // $(t.helper.find('.view').appendTo(this))
-        // t.helper.find('.view').appendTo(this)
-        // console.info(t)
         $(".layout-container .column").sortable({
           opacity: .35,
           connectWith: ".column",
           start: function(e, t) {
-            // if (!startdrag) stopsave++;
-            // startdrag = 1;
+
           },
           stop: function(e, t) {
-            // if (stopsave > 0) stopsave--;
-            // startdrag = 0;
+            $('.layout-container .ui-draggable').removeAttr('style');
+            $('.layout-container .ui-draggable .preview').remove();
           }
         });
-        // if (stopsave > 0) stopsave--;
-        // startdrag = 0;
+      }
+    });
+
+    $("#control .box").draggable({
+      connectToSortable: ".column",
+      helper: "clone",
+      handle: ".drag",
+      start: function(e, t) {
+
+      },
+      drag: function(e, t) {
+        t.helper.width(400)
+      },
+      stop: function() {
+
       }
     });
   }
@@ -100,7 +106,7 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
       var n = $(this).val().split(" ", 12);
       $.each(n, function(n, r) {
         e = e + parseInt(r);
-        t += '<div class="col-md-' + r + ' column"> '+r+' </div>'
+        t += '<div class="col-md-' + r + ' column"></div>'
       });
       if (e == 12) {
         $(this).parent().next().children().html(t);

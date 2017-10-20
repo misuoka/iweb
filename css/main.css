@@ -1,3 +1,4 @@
+/** ----------------------- 布局区域相关样式 Start-------------------------- **/
 .layout-container {
   width: 1024px;
   min-height: 500px;
@@ -7,6 +8,7 @@
   word-wrap: 
   break-word;
 }
+
 .layout-container:after {
   background-color: #F5F5F5;
   border: 1px solid #DDDDDD;
@@ -21,21 +23,81 @@
   top: -26px;
 }
 
-.layout-container .preview {
-  display:none;
+.layout-container .row-fluid {
+  background-color: #F5F5F5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: inset 0 1px 13px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 13px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 13px rgba(0, 0, 0, 0.1);
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 4px 4px 4px;
+  margin: 15px 0;
+  position: relative;
+  padding: 25px  14px 0;
+}
+
+.layout-container .row-fluid:before {
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 0 4px 0;
+  color: #9DA0A4;
+  content: "行";
+  font-size: 12px;
+  font-weight: bold;
+  left: -1px;
+  line-height:2;
+  padding: 3px 7px;
+  position: absolute;
+  top: -1px;
 }
 
 .layout-container .column {
   border: 1px red dashed;
-  min-height: 20px;
+  min-height: 40px;
+  background-color: #FFFFFF;
+  border-radius: 4px 4px 4px 4px;
+  margin: 10px 0;
+  padding: 10px 10px;
+  position: relative;
 }
+
+.layout-container .remove,.layout-container .drag {
+  filter: alpha(opacity=20); opacity: 0.2;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.layout-resource .lyrow-control {
+  float: right;
+}
+
+.label-important {font-color:white;background-color: #953b39;}
+.layout-container .remove{background-color: #953b39;}
+.layout-container .drag{background-color: gray;}
+.layout-container .lyrow-control:hover > .drag,  
+.layout-container .lyrow-control:hover > .remove,
+.layout-container .box:hover .drag, 
+.layout-container .box:hover .remove { filter: alpha(opacity=100); opacity: 1; }
+
+.ui-draggable-dragging .view { display:block;}
+.lyrow .lyrow-control {position: absolute; top: 20px; right: 10px; z-index:10;}
+.view .lyrow-control {position: absolute; top: 30px; right: 20px; z-index:10;}
+
+/** ----------------------- 布局区域相关样式 End-------------------------- **/
+
+
 
 /** ----------------------- 布局控制面板 Start-------------------------- **/
 
 #control {
   position: absolute;
   width: 680px;
-  top: 100px;
+  top: 50%;
   left: 50%;
   margin-left: -340px;
   z-index: 100000;
@@ -60,7 +122,7 @@
   margin-top: 10px;
 }
 
-#control .view {
+#control .view, #control .lyrow-control, #control .box-control {
   display: none;
 }
 
@@ -68,4 +130,4 @@
   cursor: pointer;
 }
 
-/** ----------------------- 布局控制面板 End-------------------------- **/
+/** ----------------------- 布局控制面板 End-------------------------- *
