@@ -1,10 +1,34 @@
-#index-layout {
+.layout-container {
   width: 1024px;
   min-height: 500px;
   border: 1px #757575 dashed;
-  margin: 0 auto;
+  margin: 25px auto;
+  position:relative; 
+  word-wrap: 
+  break-word;
+}
+.layout-container:after {
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 0 4px 0;
+  color: #9DA0A4;
+  content: "Body区域";
+  font-size: 12px;
+  font-weight: bold;
+  left: -1px;
+  padding: 3px 7px;
+  position: absolute;
+  top: -26px;
 }
 
+.layout-container .preview {
+  display:none;
+}
+
+.layout-container .column {
+  border: 1px red dashed;
+  min-height: 20px;
+}
 
 /** ----------------------- 布局控制面板 Start-------------------------- **/
 
@@ -14,6 +38,7 @@
   top: 100px;
   left: 50%;
   margin-left: -340px;
+  z-index: 100000;
 }
 
 #control .panel-heading {
@@ -25,5 +50,22 @@
   cursor: pointer;
 }
 
+#control .main-control {
+  margin-top: 10px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.preview {
+  margin-top: 10px;
+}
+
+#control .view {
+  display: none;
+}
+
+.drag {
+  cursor: pointer;
+}
 
 /** ----------------------- 布局控制面板 End-------------------------- **/
