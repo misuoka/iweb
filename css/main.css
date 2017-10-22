@@ -1,12 +1,12 @@
 /** ----------------------- 布局区域相关样式 Start-------------------------- **/
+
 .layout-container {
   width: 1024px;
   min-height: 500px;
   border: 1px #757575 dashed;
   margin: 25px auto;
-  position:relative; 
-  word-wrap: 
-  break-word;
+  position: relative;
+  word-wrap: break-word;
 }
 
 .layout-container:after {
@@ -23,6 +23,10 @@
   top: -26px;
 }
 
+.layout-container .lyrow {
+  position: relative;
+}
+
 .layout-container .row-fluid {
   background-color: #F5F5F5;
   -webkit-box-sizing: border-box;
@@ -35,7 +39,7 @@
   border-radius: 4px 4px 4px 4px;
   margin: 15px 0;
   position: relative;
-  padding: 25px  14px 0;
+  padding: 25px 14px 0;
 }
 
 .layout-container .row-fluid:before {
@@ -47,7 +51,7 @@
   font-size: 12px;
   font-weight: bold;
   left: -1px;
-  line-height:2;
+  line-height: 2;
   padding: 3px 7px;
   position: absolute;
   top: -1px;
@@ -63,8 +67,10 @@
   position: relative;
 }
 
-.layout-container .remove,.layout-container .drag {
-  filter: alpha(opacity=20); opacity: 0.2;
+.layout-container .remove,
+.layout-container .drag {
+  filter: alpha(opacity=20);
+  opacity: 0.2;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -76,20 +82,46 @@
   float: right;
 }
 
-.label-important {font-color:white;background-color: #953b39;}
-.layout-container .remove{background-color: #953b39;}
-.layout-container .drag{background-color: gray;}
-.layout-container .lyrow-control:hover > .drag,  
-.layout-container .lyrow-control:hover > .remove,
-.layout-container .box:hover .drag, 
-.layout-container .box:hover .remove { filter: alpha(opacity=100); opacity: 1; }
+.label-important {
+  background-color: #953b39;
+}
 
-.ui-draggable-dragging .view { display:block;}
-.lyrow .lyrow-control {position: absolute; top: 20px; right: 10px; z-index:10;}
-.view .lyrow-control {position: absolute; top: 30px; right: 20px; z-index:10;}
+.layout-container .remove {
+  background-color: #953b39;
+}
+
+.layout-container .drag {
+  background-color: gray;
+}
+
+.layout-container .lyrow-control:hover>.drag,
+.layout-container .lyrow-control:hover>.remove,
+.layout-container .box:hover .drag,
+.layout-container .box:hover .remove {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+.ui-draggable-dragging .view {
+  display: block;
+}
+
+.lyrow .lyrow-control {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 10;
+}
+
+.view .lyrow-control {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  z-index: 10;
+}
+
 
 /** ----------------------- 布局区域相关样式 End-------------------------- **/
-
 
 
 /** ----------------------- 布局控制面板 Start-------------------------- **/
@@ -122,12 +154,15 @@
   margin-top: 10px;
 }
 
-#control .view, #control .lyrow-control, #control .box-control {
+#control .view,
+#control .lyrow-control,
+#control .box-control {
   display: none;
 }
 
 .drag {
   cursor: pointer;
 }
+
 
 /** ----------------------- 布局控制面板 End-------------------------- *

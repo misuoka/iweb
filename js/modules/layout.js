@@ -20,19 +20,40 @@ define(['jquery', 'jqueryUI'], function($) {　　　　
     });
   }
 
+  Layout.prototype.draggable = function() {
+    $(".layout-container .lyrow").draggable({
+      connectToSortable: ".layout-container",
+      handle: ".drag",
+      drag: function(e, t) {
+        t.helper.width(400)
+      }
+    });
+    $(".layout-container .column").sortable({
+      opacity: .35,
+      connectWith: ".column",
+      handle: ".drag",
+      drag: function(e, t) {
+        t.helper.width(400)
+      },
+      stop: function(e, t) {
+        $('.layout-container .ui-draggable').removeAttr('style');
+        $('.layout-container .ui-draggable .preview').remove();
+      }
+    });
+  }
+
   Layout.prototype.removeElement = function() {
     $(".layout-container").delegate(".remove", "click", function(e) {
       e.preventDefault();
       $(this).parent().parent().remove();
     })
   }
-
+  var layout = new Layout();
   return {　　　　　　
     init: function() {
-      var layout = new Layout();
-
       layout.sortable();
       layout.removeElement();
-    }
+    },
+    layout: layout
   };　　
 });

@@ -1,7 +1,6 @@
 /**
  * 控制面板模块
  */
-var requireone = require;
 define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
   var Control = function() {};
 
@@ -36,6 +35,8 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
     });
   }
 
+  // Control.prototype.layout
+
   // 控制面板 拖动初始化
   Control.prototype.draggable = function() {
     var me = this;
@@ -48,24 +49,15 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
       start: function(e, t) {
 
       },
-      drop: function(event, ui) {
+      drop: function(e, t) {
 
       },
       drag: function(e, t) {
         t.helper.width(400)
       },
       stop: function(e, t) {
-        $(".layout-container .column").sortable({
-          opacity: .35,
-          connectWith: ".column",
-          start: function(e, t) {
-
-          },
-          stop: function(e, t) {
-            $('.layout-container .ui-draggable').removeAttr('style');
-            $('.layout-container .ui-draggable .preview').remove();
-          }
-        });
+        var layout = require('layout');
+        layout.layout.draggable();
       }
     });
 
