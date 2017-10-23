@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>页面可视化布局Demo</title>
-  <script src="js/lib/require.js" defer async="true" data-main="js/main"></script>
+  <script src="?js/lib/layui/layui.js&js/index.js" merge="true"></script>
 </head>
 
 <body>
   <div class="layout-container">
   </div>
-
   <!-- 布局控制器 Start -->
   <div id="control" class="panel panel-primary">
     <div class="panel-heading">
@@ -76,5 +75,11 @@
   </div>
   <!-- 布局控制器 End -->
 </body>
+<script>
+layui.config({
+  debug: true,
+  base: 'js/modules/' //你存放新模块的目录，注意，不是layui的模块目录
+}).use('test'); //加载入口
+</script>
 
 </html>
