@@ -1,59 +1,17 @@
-/**
- * 依赖配置
- * @type {Object}
- */
-require.config({
-  baseUrl: 'js/modules',
-  map: {
-    '*': {
-      'css': '../lib/css.min'
-    }
-  },
-  paths: {　　　　　　
-    "jquery": "../lib/jquery-1.12.0.min",
-    "jqueryUI": "../lib/jquery-ui/jquery-ui.min",
-    "bootstrap": "../lib/bootstrap-3.3.7-dist/js/bootstrap.min",
-    "layer": '../lib/layer/layer'
-  },
-  shim: {
-    jqueryUI: {
-      deps: [
-        'jquery',
-        'css!../lib/jquery-ui/jquery-ui.min.css'
-      ]
-    },
-    bootstrap: {
-      deps: [
-        'jquery',
-        'css!../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css'
-      ]
-    },
-    layer: {
-      deps: ['jquery', 'css!../lib/layer/theme/default/layer.css']
-    },
-    layout: {
-      deps: [
-        'jquery',
-        'css!../../css/main.css'
-      ]
-    },
-    control: {
-      deps: ['jquery']
-    }
-  }
-});
-
-require([
-  'jquery',
+layui.config({
+  debug: true,
+  base: 'js/modules/' //你存放新模块的目录，注意，不是layui的模块目录
+}).extend({ //设定组件别名
+  jqueryui: '../lib/jquery-ui/jquery-ui.min' //如果test.js是在根目录，也可以不用设定别名
+}).use([
+  'element',
   'layout',
-  'control',
-  'bootstrap'
-], function($, layout, control) {
+  'control'
+], function() {
+  var layout = layui.layout,
+    control = layui.control,
+    element = layui.element;
 
-  $(function() {
-    // 初始化
-    layout.init();
-    control.init();
-  }());
-
-});
+  layout.init();
+  control.init();
+}); //加载入口

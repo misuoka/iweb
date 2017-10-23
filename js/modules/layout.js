@@ -1,7 +1,8 @@
 /**
  * 可视化布局模块
  */
-define(['jquery', 'jqueryUI'], function($) {　　　　
+layui.define(['jqueryui'], function(exports) {
+  var $ = layui.$;　　　
   var Layout = function() {}; // 布局区域
 
   // 主容器初始化
@@ -48,12 +49,13 @@ define(['jquery', 'jqueryUI'], function($) {　　　　
       $(this).parent().parent().remove();
     })
   }
+
   var layout = new Layout();
-  return {　　　　　　
+  exports('layout', {
     init: function() {
       layout.sortable();
       layout.removeElement();
     },
     layout: layout
-  };　　
+  });
 });

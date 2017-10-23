@@ -1,7 +1,10 @@
 /**
  * 控制面板模块
  */
-define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
+layui.define(['jqueryui','layer', 'layout'], function(exports) {
+  var $ = layui.$;
+  var layer = layui.layer;
+  var layout = layui.layout;
   var Control = function() {};
 
   // 控制面板 展开和收缩 
@@ -109,8 +112,7 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
     });
   }
 
-  return {　　
-    // 初始化　　　　
+  exports('control', {
     init: function() {
       var control = new Control();
 
@@ -120,5 +122,5 @@ define(['jquery', 'layer', 'jqueryUI'], function($, layer) {　　　　
       control.buttons();
       control.inputs();
     }
-  };
+  });
 });

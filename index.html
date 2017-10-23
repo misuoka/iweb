@@ -5,15 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>页面可视化布局Demo</title>
-  <script src="?js/lib/layui/layui.js&js/index.js" merge="true"></script>
+  <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/lib/layui/layui.js"></script>
 </head>
 
 <body>
   <div class="layout-container">
   </div>
   <!-- 布局控制器 Start -->
-  <div id="control" class="panel panel-primary">
-    <div class="panel-heading">
+  <div id="control" class="panel">
+    <div class="panel-heading layui-bg-green">
       <h3 class="panel-title"><span class="glyphicon glyphicon-minus" aria-hidden="true" data-expand=true></span>布局控制器</h3>
     </div>
     <div class="panel-body">
@@ -75,11 +77,7 @@
   </div>
   <!-- 布局控制器 End -->
 </body>
-<script>
-layui.config({
-  debug: true,
-  base: 'js/modules/' //你存放新模块的目录，注意，不是layui的模块目录
-}).use('test'); //加载入口
-</script>
+
+<script src="js/main.js"></script>
 
 </html>

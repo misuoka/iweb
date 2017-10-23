@@ -8,6 +8,11 @@
 
 		// AMD. Register as an anonymous module.
 		define([ "jquery" ], factory );
+	} else if(window.layui && layui.define) {
+		// 加入layui的方式
+		layui.define('jquery', function(exports) {
+			exports('jqueryui', factory(layui.jquery));
+		});
 	} else {
 
 		// Browser globals
