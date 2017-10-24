@@ -5,12 +5,13 @@ layui.config({
   jqueryui: '../lib/jquery-ui/jquery-ui.min' //如果test.js是在根目录，也可以不用设定别名
 }).use([
   'element',
+  'form',
   'layout',
   'control'
 ], function() {
   var layout = layui.layout,
     control = layui.control,
-    element = layui.element;
+    form =  layui.form;
 
   layout.init();
   control.init();

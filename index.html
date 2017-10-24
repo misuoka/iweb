@@ -11,73 +11,75 @@
 </head>
 
 <body>
-  <div class="layout-container">
+  <div class="header-container">
+  </div>
+  <div class="main-container">
+  </div>
+  <div class="footer-container">
   </div>
   <!-- 布局控制器 Start -->
-  <div id="control" class="panel">
-    <div class="panel-heading layui-bg-green">
-      <h3 class="panel-title"><span class="glyphicon glyphicon-minus" aria-hidden="true" data-expand=true></span>布局控制器</h3>
+  <div class="control">
+    <div class="control-header">
+      <span class='title'>主控</span>
     </div>
-    <div class="panel-body">
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active" data-id='1'><a href="javascript:;">主控</a></li>
-        <li role="presentation" data-id='2'><a href="javascript:;">列表模块</a></li>
+    <div class="tools">
+      <ul>
+        <li>
+          <i class="layui-icon">&#xe632;</i>
+          <div class="tool-panel">
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                <label class="layui-form-label">宽度单位</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="unit" value="px" title="像素" checked>
+                  <input type="radio" name="unit" value="%" title="百分比">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">头部宽度</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="header" placeholder="请输入宽度" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-inline">
+                  <button class="layui-btn">
+                    <i class="layui-icon">&#xe618;</i>
+                  </button>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">中部宽度</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="main" placeholder="请输入宽度" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-inline">
+                  <button class="layui-btn">
+                    <i class="layui-icon">&#xe618;</i>
+                  </button>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">底部宽度</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="footer" placeholder="请输入宽度" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-inline">
+                  <button class="layui-btn">
+                    <i class="layui-icon">&#xe618;</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li> <i class="layui-icon">&#xe60a;</i> </li>
       </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" id="control_tabcontent_1">
-          <div class="row main-control">
-            <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-danger" id="clear"><span class="glyphicon glyphicon-trash"></span>清空</button>
-              <button type="button" class="btn btn-primary" id="undo"><span class="glyphicon glyphicon-arrow-left"></span>撤销</button>
-              <button type="button" class="btn btn-primary" id="redo"><span class="glyphicon glyphicon-arrow-right"></span>重做</button>
-            </div>
-            <div class="layout-resource">
-              <div class="lyrow clearfix">
-                <div class="lyrow-control">
-                  <a href="#close" class="drag label"><i class="glyphicon glyphicon-move"></i>移动</a>
-                  <a href="#close" class="remove label label-important"><i class="glyphicon glyphicon-remove"></i>删除</a>
-                </div>
-                <div class="input-group preview">
-                  <span class="input-group-addon">布局设置</span>
-                  <input type="text" class="form-control" placeholder="每个区域以空格分割 所有列相加必须等于 12" value="12">
-                  <span class="input-group-addon drag"><i class="glyphicon glyphicon-duplicate"></i></span>
-                </div>
-                <div class="view">
-                  <div class="row-fluid clearfix">
-                    <div class="col-md-12 column"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="control_tabcontent_2" class="tab-pane">
-          <div class="layout-resource">
-            <div class="box">
-              <div class="btn-group preview">
-                <span class="input-group-addon drag"><i class="glyphicon glyphicon-duplicate"></i> 复制巨幕组件</span>
-              </div>
-              <div class="box-control">
-                <a href="#" class="drag label"><i class="glyphicon glyphicon-move"></i>移动</a>
-                <a href="#" class="remove label label-important"><i class="glyphicon glyphicon-remove"></i>删除</a>
-              </div>
-              <div class="view">
-                <div class="jumbotron">
-                  <h1>Hello, world!</h1>
-                  <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="panel-footer">提示：先根据需要设置容器，然后拖动需要的组件到容器中</div>
+    <div class="control-footer">
+      <i class="layui-icon" data-expand="true">&#xe619;</i>
+    </div>
   </div>
   <!-- 布局控制器 End -->
 </body>
-
 <script src="js/main.js"></script>
 
 </html>

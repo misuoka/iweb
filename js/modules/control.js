@@ -1,7 +1,7 @@
 /**
  * 控制面板模块
  */
-layui.define(['jqueryui','layer', 'layout'], function(exports) {
+layui.define(['jqueryui', 'layer', 'layout'], function(exports) {
   var $ = layui.$;
   var layer = layui.layer;
   var layout = layui.layout;
@@ -9,19 +9,15 @@ layui.define(['jqueryui','layer', 'layout'], function(exports) {
 
   // 控制面板 展开和收缩 
   Control.prototype.expand = function() {
-    $('#control .panel-heading span.glyphicon').on('click', function() {
+    $('.control .control-footer i').on('click', function() {
       var expand = $(this).data('expand');
 
       if (expand) {
-        $(this).removeClass('glyphicon-minus');
-        $(this).addClass('glyphicon-plus');
-        $('#control .panel-footer').hide(500);
-        $('#control .panel-body').hide(500);
+        $('.control .tools').hide(500);
+        $(this).html('&#xe61a;');
       } else {
-        $(this).removeClass('glyphicon-plus');
-        $(this).addClass('glyphicon-minus');
-        $('#control .panel-body').show(500);
-        $('#control .panel-footer').show(500);
+        $('.control .tools').show(500);
+        $(this).html('&#xe619;');
       }
 
       $(this).data('expand', !expand);
@@ -38,12 +34,13 @@ layui.define(['jqueryui','layer', 'layout'], function(exports) {
     });
   }
 
-  // Control.prototype.layout
-
   // 控制面板 拖动初始化
   Control.prototype.draggable = function() {
     var me = this;
-    $('#control').draggable();
+    $('.control').draggable({
+      handle: '.control-header',
+      containment: "window"
+    });
 
     $("#control .lyrow").draggable({
       connectToSortable: ".layout-container",
