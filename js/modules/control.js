@@ -88,6 +88,15 @@ layui.define(['jqueryui', 'layer', 'layout'], function(exports) {
     $('#redo').on('click', function() {
       layer.msg("重做功能未实现");
     });
+    $('.tool-panel .width-set').on('click', function() {
+      var val = $(this).parent().prev().find('input').val();
+        unit = $('.tool-panel input[name=unit]:checked').val();
+
+      if(val) {
+        $('.header-container').css('width',  val + unit);
+        $('.header-container:after').css('content', val + unit);
+      }
+    });
   }
 
   // 输入框事件
