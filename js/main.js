@@ -1,3 +1,5 @@
+var log = console.log.bind(console);
+
 layui.config({
   debug: true,
   base: 'js/modules/' //你存放新模块的目录，注意，不是layui的模块目录
